@@ -11,9 +11,4 @@ int _printf(const char *format, ...);
 int _putchar(char c);
 /* To write a single character to standard output (stdout). */
 
-int _strlen(const, char *);
-/* Calculate the length of a string. */
-
-
 #endif
-	

@@ -1,0 +1,21 @@
+# Ignore Emacs buffer files
+*~
+*#
+
+# Ignore object files
+*.o
+
+# Ignore main files
+*main.c
+
+# Ignore executable files
+*.out
+
+# Ignore every test
+test_*
+
+# Ignore certain files
+_putchar.c
+
+# Exception
+

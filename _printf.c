@@ -8,7 +8,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int size;							/* Variable for storing output size. */
+	int final_size_to_print;							/* Variable for storing output size. */
 	va_list print_argument_list;
 	char *given_argument;
 
@@ -18,17 +18,21 @@ int _printf(const char *format, ...)
 	if (format == NULL)					/* Check if the format is NULL. */
 		ERROR;
 
-	else
-	{
-		given_argument = va_arg(print_argument_list, char *);
-			while (*given_argument != 0)
-			{
-			_putchar(*given_argument);
-			given_argument++;
-			}
-	}
+while (*format)
+{
+	if (format == '%')
+	/*à compléter*/
+
+	format++;
+
+else
+	write(1, format, 1);
+}
+format++;
 
 
 
-	return (size);
+
+	va_end(print_argument_list);
+	return (final_size_to_print);
 }

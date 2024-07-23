@@ -1,9 +1,16 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+#include <unistd.h>				/** Library that allows us to use `write`function */
 #include <stdlib.h>				/** Library that allow us to use `malloc` `Free`. */
 #include <stdarg.h>				/** Library that allow us to use variedic fonctions. */
 
+/** Start - Macros created */
+
+#define ERROR (write(1, "ERROR\n", 6))
+/** Print "ERROR" followed by a new line */
+
+/** End - Macros created */
 
 /**
  * struct SpecifierFormat - Structure to set an array of specifiers
@@ -26,9 +33,6 @@ int _putchar(char c);
 
 int _strcmp(char *s1, char *s2);
 /** _strcmp - Fonction that allows us to compare two strings of char */
-
-
-
 
 
 #endif

@@ -1,11 +1,16 @@
 #include "main.h"
-#include <stdlib.h>
+#include <unistd.h>				/** Library that allows us to use `write`function */
+#include <stdlib.h>				/** Library that allow us to use `malloc` `Free`. */
+#include <stdarg.h>				/** Library that allow us to use variedic fonctions. */
+
 /**
  * _printf - Customised function for displaying messages.
  * @format: Format character string specifying
  * how arguments should be displayed.
  *
+ * Return: final size to print
  */
+
 int _printf(const char *format, ...)
 {
 	int final_size_to_print;							/* Variable for storing output size. */
@@ -18,20 +23,42 @@ int _printf(const char *format, ...)
 	if (format == NULL)					/* Check if the format is NULL. */
 		ERROR;
 
-while (*format)
-{
-	if (format == '%')
-	/*à compléter*/
+	while (*format)
+	{
+		if (*format == '%')
+		{
+			if (format == '%c')
+			{
+				/* code */
+			}
 
-	format++;
+			if (format == '%%')
+			{
+				/* code */
+			}
 
-else
-	write(1, format, 1);
-}
-format++;
+			if (format == '%s')
+			{
+				/* code */
+			}
 
+			if (format == '%d')
+			{
+				/* code */
+			}
 
+			if (format == '%i')
+			{
+				/* code */
+			}
+			
+		format++;
+		}
 
+		else
+		write(1, format, 1);
+		format++;
+	}
 
 	va_end(print_argument_list);
 	return (final_size_to_print);

@@ -7,16 +7,16 @@ To begin with, we decided to devide the work:
 - Arc will: 
   - write the documentation (`REAMDE.md`)
   - code the `get_specifier_function.c` file
+  - Correcting and provide test environnement and tests in general.
 
 - Xavier will:
   - write the Flowchart.
   - code the `print_specifiers_functions.c` (the three first specifiers)
+  - The MANPAGE redaction and implement
 
  - Teamwork:
    - `main.h` file
    - `_printf` file
-
-- The MANPAGE will be a team effort throughout the project. 
 
 Note : This `README.md` will be updated several times as the project progresses.
 
@@ -400,7 +400,7 @@ This allowed us to verify if our function operated correctly and efficiently, en
 
 ### Some tests to try:
 
-Here are some simple test to try using `_printf`
+Here are some simple test to try:
 
  - **Printing a character :** 
 

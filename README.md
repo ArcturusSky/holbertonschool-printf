@@ -268,17 +268,52 @@ _printf("My integer is: %i", example_int_variable)
 
 ## Manpage `_printf`
 
-A "Manpage" is short for "Manual Page". This is a command scripted to display the manual page of `_printf`, explaining the command and how to use it, while being in bash.
+A "Manpage" is short for "Manual Page". This is a command scripted to display the manual page of `_printf`, explaining the command and how to use it, while being in bash. Xavier wrote one for us and here is how to install it on you local visual code.
 
-How to use it:
+**Step 1: Creating the Directory Structure**
+
+First, it's requiered to create the necessary directories if they don't already exist.
+
+```sh
+sudo mkdir -p /usr/local/man/man3
+```
+
+**Step 2: Install the manpage**
+
+After creating the directory structure, installing the manpage with `sudo`to ensure to have the necessary permissions:
+
+```sh
+sudo install -o root -m 0644 man_3_printf /usr/local/man/man3/_printf.3
+```
+
+Little breakdown about what this all about:
+
+  - **`-o root`:** Specifies the owner of the file (root in this case).
+
+  - **`-m 0644`:** Sets the permissions of the file (readable and writable by the owner, readable by others).
+
+  - **`man_3_printf`:** The source file for the manpage.
+
+  - **`/usr/local/man/man3/_printf.3`:** The destination path for the installed manpage.
+
+
+**Step 3: Update the manpage database**
+
+You already have a manpage database holding the man of other commands. You need to update it so that `man` can find the new manpage:
+
+```sh
+sudo mandb
+```
+
+**Step 4: Try it**
 
 ```sh
 man _printf
 ```
 
-And this is a screenshot of what is supposed to be displayed when using that command:
+And this is a screenshot of a preview of what is supposed to be displayed when using that command:
 
-![What is supposed to display on your terminal](https://designshack.net/wp-content/uploads/placehold.jpg "manpag of _printf function in C")
+![What is supposed to display on your terminal](https://cdn.discordapp.com/attachments/385020139839422464/1265645580776898661/image.png?ex=66a243cd&is=66a0f24d&hm=a46d231ea73dca4c9288897b5ca2b738836fa537001d3aeac06d626a1ab1ed8f& "manpag of _printf function in C")
 
 ### How we tested our project.
 

@@ -1,8 +1,8 @@
-.TH _printf 3 "24 July 2024" "version 1.0 
+.TH _printf 3 "24 July 2024" "version 1.0
 .SH NAME
 Man _printf
 .SH SYNOPSIS
-#include "main.h" 
+#include "main.h"
 
 int _printf(const char *format, ...);
 .B _printf
@@ -30,19 +30,19 @@ Conversion specifiers:
 Conclusion:
 
 		The _printf function returns the total number of characters printed (not including the final null character) or a negative value if an error occurs.
-	
-		
-		The _printf function is extremely powerful for formatted display in the C language. 
+
+
+		The _printf function is extremely powerful for formatted display in the C language.
 	
 
 		Mastering its use allows you to produce clear, visible text output,
 
 
- 	
-		while offering precise control over the formatting of the data displayed. 
+
+		while offering precise control over the formatting of the data displayed.
 
 
-	
+
 		However, it is crucial to use it with care to avoid type errors and potential security holes.
 
 

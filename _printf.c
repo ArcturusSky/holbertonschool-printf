@@ -4,11 +4,11 @@
 #include <stdarg.h>				/** Library that allow us to use variedic fonctions. */
 
 /**
- * _printf - Customised function for displaying messages.
- * @format: Given string to print eache character and check if hold
+ * _printf - Customized function for displaying messages.
+ * @format: Given string to print each character and check if it holds
  * a specifier to know how arguments should be displayed.
  *
- * Return: final size to print
+ * Return: Total number of characters printed.
  */
 
 int _printf(const char *format, ...)
@@ -19,37 +19,34 @@ int _printf(const char *format, ...)
 	va_start(print_argument_list, format);
 	if (format == NULL) /** Check if the format is NULL. */
 	{
+		va_end(print_argument_list);
 		return (0);
 	}
 	for (; *format != 0 ; format++)
 	{
 		if (*format == '%') /** Check if a specifier is found */
 		{
-			format++; /** Increment to give see next character */
+			format++; /** Increment to see next character */
 			if (*format == 'c')
+				final_size_to_print += print_char(va_arg(print_argument_list, int));
+			else if (*format == 's')
+				final_size_to_print += print_string(va_arg(print_argument_list, char *));
+			else if (*format == '%')
+				final_size_to_print += _putchar('%'); /** Just printing it is enough */
+			else if (*format == 'd')
+				final_size_to_print += print_decimal(va_arg(print_argument_list, int));
+			else if (*format == 'i')
+				final_size_to_print += print_integer(va_arg(print_argument_list, int));
+			else
 			{
-				print_char(va_arg(print_argument_list, int));
-			}
-			if (*format == 's')
-			{
-				print_string(va_arg(print_argument_list, char *));
-			}
-			if (*format == '%')
-			{
-				_putchar('%'); /** Just printing the special character is enough */
-			}
-			if (*format == 'd')
-			{
-				print_decimal(va_arg(print_argument_list, int));
-			}
-			if (*format == 'i')
-			{
-				print_integer(va_arg(print_argument_list, int));
+				/** Handle unknown specifiers by printing '%' and the next character. */
+				final_size_to_print += _putchar('%');
+				final_size_to_print += _putchar(*format);
 			}
 		}
 		else
-		write(1, format, 1); /** print a char from sdinput to stdout n/a by spec. */
-		final_size_to_print++;
+		/** Print characters not affected by specifiers */
+		final_size_to_print += write(1, format, 1);
 	}
 	va_end(print_argument_list);
 	return (final_size_to_print);

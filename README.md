@@ -6,13 +6,13 @@ To begin with, we decided to devide the work:
 
 - Arc will: 
   - write the documentation (`REAMDE.md`)
-  - code the `get_specifier_function.c` file
-  - Correcting and provide test environnement and tests in general.
+  - code the `get_specifier_function.c` file (Update: In the end this file has been deleted because unecessary and source of conflicts.)
+  - correcting and provide test and test environnement, in general.
 
 - Xavier will:
   - write the Flowchart.
-  - code the `print_specifiers_functions.c` (the three first specifiers)
-  - The MANPAGE redaction and implement
+  - code the `print_specifiers_functions.c`
+  - the MANPAGE redaction and implement
 
  - Teamwork:
    - `main.h` file
@@ -324,7 +324,7 @@ So, to provide a safe environnement to test our functions without messing everyt
 When we needed to test something, we worked in that directory, on our `_printf.c`file in this directory. We adjusted or implemented the changes what we wanted to try, then compiled everything together like this:
 
 ```sh
-gcc _printf.c main.h main.c _print_specifiers_fonctions.c get_specifier_function.c _putchar.c -o test_print_string
+gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format main.h _printf.c _print_specifiers_functions.c main.c _putchar.c -o test_print_string
 ```
 
 to test if it works.
@@ -343,6 +343,7 @@ Here is detailed example of one of our test (the first one):
 
 
 *`main.c` file with a simple line to print without any specifier yet.*
+
 ```c
 #include <limits.h>
 #include <stdio.h>
@@ -415,7 +416,7 @@ gcc _printf.c main.h main.c -o test_print_string
 ./test_print_string
 ```
 
-*Expected Output:*
+*Output:*
 
 ```
 Let's try to printf a simple sentence.
@@ -429,6 +430,19 @@ To ensure there are no memory leaks or other issues, we used Valgrind for testin
 
 ```sh
 valgrind --leak-check=full ./test_print_string
+```
+
+*Valgrind Output*
+```
+==11799== 
+==11799== HEAP SUMMARY:
+==11799==     in use at exit: 0 bytes in 0 blocks
+==11799==   total heap usage: 1 allocs, 1 frees, 1,024 bytes allocated
+==11799== 
+==11799== All heap blocks were freed -- no leaks are possible
+==11799== 
+==11799== For lists of detected and suppressed errors, rerun with: -s
+==11799== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
 
 This allowed us to verify if our function operated correctly and efficiently, ensuring reliable performance in various scenarios.
@@ -517,7 +531,7 @@ int main (void)
 
 ## Flowchart
 
-![This Flowchar presents how the function `_printf` that we coded worked, in a simple way.](https://designshack.net/wp-content/uploads/placehold.jpg "Flowchart for `_printf` function")
+![This Flowchar presents how the function `_printf` that we coded worked, in a simple way.](https://cdn.discordapp.com/attachments/1266013559540678748/1266071639271932014/Printf_v1.1.drawio.png?ex=66a3d099&is=66a27f19&hm=9e1b8dd48c218d1ae214feb214606f54426b71c508a4b399fb170fab5b71b148& "Flowchart for `_printf` function")
 
 
 ## Conclusion

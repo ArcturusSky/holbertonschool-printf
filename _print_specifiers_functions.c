@@ -26,12 +26,18 @@ int print_string(char *string)
 	{
 		int count = 0;
 
-		while (*string != 0)			/* Loop until reaching the end of the string */
+		if (string == NULL)
+		{
+			string = "(null)";
+		}
+
+		while (*string != '\0')			/* Loop until reaching the end of the string */
 		{
 			_putchar(*string);			/** Print the current character */
 			string++;
 			count++;					/** Move to the next charater in the string */
 		}
+
 
 		return (count);
 	}

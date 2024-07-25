@@ -15,7 +15,6 @@
 test_*
 
 # Ignore certain files
-_putchar.c
 
 # Exception
 

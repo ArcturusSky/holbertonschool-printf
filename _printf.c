@@ -5,59 +5,61 @@
 
 /**
  * _printf - Customised function for displaying messages.
- * @format: Format character string specifying
- * how arguments should be displayed.
+ * @format: Given string to print eache character and check if hold
+ * a specifier to know how arguments should be displayed.
  *
  * Return: final size to print
  */
 
 int _printf(const char *format, ...)
 {
-	int final_size_to_print;							/* Variable for storing output size. */
+	/** Declaring a variable to store the final output size. */
+	int final_size_to_print = 0;
+	/** Declaration of the list of variable arguments. */
 	va_list print_argument_list;
-	char *given_argument;
 
 
-	/*  Declaration of the list of variable arguments. */
-
-	if (format == NULL)					/* Check if the format is NULL. */
+	
+	va_start(print_argument_list, format);
+	/** Check if the format is NULL. */
+	if (format == NULL)
 		ERROR;
 
 	while (*format)
 	{
+		/** Check if a specifier is found */
 		if (*format == '%')
 		{
-			if (format == '%c')
+			/** Increment the format to read the next character and determine which case it is */
+			format++;
+			if (*format == 'c')
 			{
-				/* code */
+				print_char(va_arg(print_argument_list, int));
 			}
-
-			if (format == '%%')
+			if (*format == 's')
 			{
-				/* code */
+				print_string(va_arg(print_argument_list, char *));
 			}
-
-			if (format == '%s')
+			if (*format == '%')
 			{
-				/* code */
+				/** Just printing the special character is enough */
+				_putchar('%');
 			}
-
-			if (format == '%d')
+			if (*format == 'd')
 			{
-				/* code */
+				print_decimal(va_arg(print_argument_list, int));
 			}
-
-			if (format == '%i')
+			if (*format == 'i')
 			{
-				/* code */
+				print_integer(va_arg(print_argument_list, int));
 			}
-			
-		format++;
 		}
 
 		else
+		/** print a character coming from "format" which isn't affected by a specifier */
 		write(1, format, 1);
 		format++;
+		final_size_to_print++;
 	}
 
 	va_end(print_argument_list);

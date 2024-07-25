@@ -13,7 +13,7 @@
 int print_char(char c)
 	{
 		_putchar(c);
-		return (0);
+		return (1);
 	}
 /**
  * print_string - Prints a string of characters.
@@ -24,13 +24,16 @@ int print_char(char c)
 
 int print_string(char *string)
 	{
+		int count = 0;
+
 		while (*string != 0)			/* Loop until reaching the end of the string */
 		{
 			_putchar(*string);			/** Print the current character */
-			string++;					/** Move to the next charater in the string */
+			string++;
+			count++;					/** Move to the next charater in the string */
 		}
 
-		return (0);
+		return (count);
 	}
 
 /**

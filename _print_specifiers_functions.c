@@ -86,7 +86,7 @@ int print_integer(int integer)
 		unsigned int divisor;
 		unsigned int temp;
 
-										/** Checking if negative numbers. */
+										/** Check if negative numbers. */
 		if (integer < 0)
 		{
 			_putchar('-');				/** Print sign'-'.*/

@@ -23,7 +23,10 @@ int _printf(const char *format, ...)
 	va_start(print_argument_list, format);
 	/** Check if the format is NULL. */
 	if (format == NULL)
-		ERROR;
+		{
+			ERROR;
+			return (0);
+		}
 
 	while (*format)
 	{

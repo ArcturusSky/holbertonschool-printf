@@ -27,24 +27,6 @@ Conversion specifiers:
     %d: Signed decimal integer. '123456'
     %i: Decimal integers. '42'
 
-Conclusion:
-
-		The _printf function returns the total number of characters printed (not including the final null character) or a negative value if an error occurs.
-
-
-		The _printf function is extremely powerful for formatted display in the C language.
-	
-
-		Mastering its use allows you to produce clear, visible text output,
-
-
-
-		while offering precise control over the formatting of the data displayed.
-
-
-
-		However, it is crucial to use it with care to avoid type errors and potential security holes.
-
 
 .SH OPTIONS
 .TP
@@ -68,16 +50,37 @@ Specify the output file. If not supplied, the tool writes to standard output.
         int b = "ABC";
         int d = 123456;
 
-        _printf("The value of a is: %c\n", a);  /* Displays the value of 'a', est 'A'. */
-        _printf("The value of b is: %s\n", b);  /* Displays the value of 'b', est 'ABC'. */
-        _printf("The value of d is: %d\n", d);  /* Displays the value of 'd', est '123456'. */
+        _printf("The value of a is: %c\n", a);  /* Displays the value of 'a', is 'A'. */
+        _printf("The value of b is: %s\n", b);  /* Displays the value of 'b', is 'ABC'. */
+        _printf("The value of d is: %d\n", d);  /* Displays the value of 'd', is '123456'. */
 
         return (0);
     }
 
-The function returns the number of characters printed if it is successful.
+	The function returns the number of characters printed if it is successful.
 
 	The function returns a negative value (-1) if an output error occurs.
+
+	
+	Conclusion:
+
+		The _printf function returns the total number of characters printed (not including the final null character) or a negative value if an error occurs.
+
+
+		The _printf function is extremely powerful for formatted display in the C language.
+	
+
+		Mastering its use allows you to produce clear, visible text output,
+
+
+
+		while offering precise control over the formatting of the data displayed.
+
+
+
+		However, it is crucial to use it with care to avoid type errors and potential security holes.
+
+
 .PP
 Write information to a file and save the result in another file :
 .PP
@@ -90,32 +93,23 @@ Write the information in standard input and display the result in standard outpu
 .EX
 cat confidential.txt | redaction
 .EE
-.SH AUTHOR
-Written by Anne - Cécile BESSE Xavier PIEDALLU.
-.SH REPORTING BUGS
-Report bugs    The function returns the number of characters printed if it is successful.
 
-	The function returns a negative value (-1) if an output error occurs.
-.PP
-Write information to a file and save the result in another file :
-.PP
-.EX
-redaction -i confidential.txt -o redacted.txt
-.EE
-.PP
-Write the information in standard input and display the result in standard output :
-.PP
-.EX
-cat confidential.txt | redaction
-.EE
-.SH AUTHOR
-Written by Anne - Cécile BESSE Xavier PIEDALLU.
 .SH REPORTING BUGS
-Report bugs 
+Report bugs  
 No known bugs 
-.SH COPYRIGHT
-This software is free: you are free to modify it and redistribute it. There is NO WARRANTY, to the extent permitted by law.
-.SH SEE ALSO
-.BR grep (1),
-.BR sed (1),
-.BR awk (1)
+
+.SH AUTHOR
+Written by Anne - Cécile BESSE (Arc) - Xavier PIEDALLU.
+
+.PP
+Write information to a file and save the result in another file :
+.PP
+.EX
+redaction -i confidential.txt -o redacted.txt
+.EE
+.PP
+Write the information in standard input and display the result in standard output :
+.PP
+.EX
+cat confidential.txt | redaction
+.EE

@@ -50,9 +50,9 @@ Specify the output file. If not supplied, the tool writes to standard output.
         int b = "ABC";
         int d = 123456;
 
-        _printf("The value of a is: %c\n", a);  /* Displays the value of 'a', is 'A'. */
-        _printf("The value of b is: %s\n", b);  /* Displays the value of 'b', is 'ABC'. */
-        _printf("The value of d is: %d\n", d);  /* Displays the value of 'd', is '123456'. */
+        _printf("The value of a is: %c\\n", a);  /* Displays the value of 'a', is 'A'. */
+        _printf("The value of b is: %s\\n", b);  /* Displays the value of 'b', is 'ABC'. */
+        _printf("The value of d is: %d\\n", d);  /* Displays the value of 'd', is '123456'. */
 
         return (0);
     }

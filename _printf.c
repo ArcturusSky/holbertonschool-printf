@@ -38,17 +38,18 @@ int _printf(const char *format, ...)
 			else if (*format == 'i')
 				final_size_to_print += print_integer(va_arg(print_argument_list, int));
 			else if (*format == 0)
-				final_size_to_print += _putchar('%');
+				{
+				va_end(print_argument_list);
+				return (-1);
+				}
 			else
 			{
-				/** Handle unknown specifiers by printing '%' and the next character. */
-				final_size_to_print += _putchar('%');
+				final_size_to_print += _putchar('%');	/** Handle unknown specifiers. */
 				final_size_to_print += _putchar(*format);
 			}
 		}
 		else
-		/** Print characters not affected by specifiers */
-		final_size_to_print += write(1, format, 1);
+		final_size_to_print += write(1, format, 1);  /** Print char n/a by spec */
 	}
 	va_end(print_argument_list);
 	return (final_size_to_print);

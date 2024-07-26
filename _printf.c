@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	if (format == NULL) /** Check if the format is NULL. */
 	{
 		va_end(print_argument_list);
-		return (0);
+		return (-1);
 	}
 	for (; *format != 0 ; format++)
 	{

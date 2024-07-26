@@ -37,6 +37,8 @@ int _printf(const char *format, ...)
 				final_size_to_print += print_decimal(va_arg(print_argument_list, int));
 			else if (*format == 'i')
 				final_size_to_print += print_integer(va_arg(print_argument_list, int));
+			else if (*format == 0)
+				final_size_to_print += _putchar('%');
 			else
 			{
 				/** Handle unknown specifiers by printing '%' and the next character. */

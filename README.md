@@ -311,10 +311,6 @@ sudo mandb
 man _printf
 ```
 
-And this is a screenshot of a preview of what is supposed to be displayed when using that command:
-
-![What is supposed to display on your terminal](https://cdn.discordapp.com/attachments/385020139839422464/1265645580776898661/image.png?ex=66a243cd&is=66a0f24d&hm=a46d231ea73dca4c9288897b5ca2b738836fa537001d3aeac06d626a1ab1ed8f& "manpag of _printf function in C")
-
 ### How we tested our project.
 
 In this section, we are going to focus on the construction of the script itself and especially how we tested it, more than explaining how it works (it has already been explained in previous section).
